@@ -40,7 +40,7 @@ class App extends React.Component {
   }
 
   deleteItem(key) {
-    var filteredItems = this.state.items.filter(function (item){
+    const filteredItems = this.state.items.filter(function (item){
       return item.key !== key
     });
 
@@ -50,9 +50,9 @@ class App extends React.Component {
   }
 
   updateItem(key) {
-    var updatedItems = this.state.items.map(item => {
+    const updatedItems = this.state.items.map(item => {
                   if(item.key === key)
-                     return Object.assign({}, item, {completed:true})
+                     return Object.assign({}, item, {completed: !item.completed})
                   return item
               });
 
